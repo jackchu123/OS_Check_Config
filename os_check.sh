@@ -46,7 +46,7 @@ function disk_check(){
 		disk_size=`lsblk |grep vda|sed -n '1p'|awk -F' ' '{print $4}'`
 		echo "Disk Size: $disk_size"
 	fi
-
+	# disk type
 	disk_type=`cat /sys/block/*/queue/rotational|tail -n 1`
 	if [ $disk_type -eq 0 ]
 	then
