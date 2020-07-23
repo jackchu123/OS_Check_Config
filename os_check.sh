@@ -1,6 +1,9 @@
 #!/bin/bash
 #
-# create data file
+######################################
+# ScriptName: os_check.sh            #
+# Description: Linux Configure check #
+######################################
 # config 
 data_file=/tmp/os_data.txt
 # deploy
@@ -11,7 +14,7 @@ data_file=/tmp/os_data.txt
 function cpu_check(){
 	echo '===Hardware==='
 	echo '---CPU---'
-	cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c|xargs echo 'cpu核数: '
+	cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c|xargs echo -e "cpu核数: "
 	echo "   "
 }
 #####################
